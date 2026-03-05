@@ -1,0 +1,114 @@
+/* eslint-disable */
+/* stylelint-disable */
+/* prettier-ignore */
+
+@import "tailwindcss";
+
+@theme {
+  /* Colores principales - Azul Profundo */
+  --color-primary-50: #ecf0f1;
+  --color-primary-100: #d5dbdb;
+  --color-primary-200: #aab7b8;
+  --color-primary-300: #7f8c8d;
+  --color-primary-400: #626567;
+  --color-primary-500: #2c3e50;
+  --color-primary-600: #273746;
+  --color-primary-700: #212f3c;
+  --color-primary-800: #1b2631;
+  --color-primary-900: #17202a;
+  --color-primary-950: #0e161b;
+  
+  /* Azul clínico */
+  --color-accent-50: #ebf5fb;
+  --color-accent-100: #d6eaf8;
+  --color-accent-200: #aed6f1;
+  --color-accent-300: #85c1e9;
+  --color-accent-400: #5dade2;
+  --color-accent-500: #3498db;
+  --color-accent-600: #2e86c1;
+  --color-accent-700: #2874a6;
+  --color-accent-800: #1f618d;
+  --color-accent-900: #1a5276;
+  --color-accent-950: #154360;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    background-color: var(--color-accent-500);
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-accent-600);
+  }
+  
+  .btn-secondary {
+    background-color: var(--color-primary-500);
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--color-primary-600);
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .input-field:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 2px var(--color-accent-500);
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3498db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2e86c1;
+}
