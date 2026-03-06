@@ -76,7 +76,7 @@
             <div class="group card scroll-animate hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="100">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Ecografía Abdominal y Pélvica</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
-              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Estudios especializados abdominales (adulto y pediátrico), renales, hepáticos y prostáticos con medición precisa de volumen pre y post miccional.</p>
+              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Estudios especializados abdominales <br>(adulto y pediátrico), renales, hepáticos y prostáticos con medición precisa de volumen pre y post miccional.</p>
             </div>
             
             <!-- Servicio 3: Sistema Musculoesquelético -->
