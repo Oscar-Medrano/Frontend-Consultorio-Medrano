@@ -4,7 +4,7 @@
     <Header />
 
     <!-- hero Section -->
-    <section id="inicio" class="relative bg-linear-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-24 lg:py-32 overflow-hidden">
+    <section id="inicio" class="relative bg-linear-to-br from-primary-600 via-primary-700 to-primary-800 text-white min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-88px)] flex flex-col justify-center overflow-hidden">
       <!-- Patrón de fondo -->
       <div class="absolute inset-0 opacity-10">
         <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
