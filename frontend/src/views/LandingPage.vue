@@ -100,7 +100,7 @@
             <div class="group card scroll-animate hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="400">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Evaluación Vascular Periférica</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
-              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Doppler renal, hepático y tiroideo. Mapeo venoso y arterial de miembros inferiores con evaluación neurovascular del estrecho torácico superior.</p>
+              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Doppler renal, hepático y tiroideo. Mapeo venoso y arterial de miembros inferiores. Evaluación neurovascular del estrecho torácico superior.</p>
             </div>
           </div>
         </div>

@@ -166,6 +166,7 @@
                   <option value="Eco Doppler Hepático">Eco Doppler Hepático</option>
                   <option value="Eco Doppler Venoso de Miembros Inferiores">Eco Doppler Venoso de Miembros Inferiores</option>
                   <option value="Eco Doppler Arterial de Miembros Inferiores">Eco Doppler Arterial de Miembros Inferiores</option>
+                  <option value="Eco Doppler Carotídeo Vertebrobasilar">Eco Doppler Carotídeo Vertebrobasilar</option>
                   <option value="Evaluación Neurovascular del Estrecho Torácico Superior">Evaluación Neurovascular del Estrecho Torácico Superior</option>
                 </select>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
