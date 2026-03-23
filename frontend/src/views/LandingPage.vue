@@ -66,21 +66,21 @@
           <!-- Fila 1: 3 tarjetas -->
           <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
             <!-- Servicio 1: Consultas Médicas Integrales -->
-            <div class="group card scroll-animate hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="0">
+            <div class="group card scroll-animate service-card hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="0">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Consultas Médicas Integrales</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
               <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Valoración completa de salud para adultos y niños, incluyendo consultas psicosociales familiares con un enfoque preventivo, humano y de bienestar integral.</p>
             </div>
             
             <!-- Servicio 2: Ecografía Abdominal y Pélvica -->
-            <div class="group card scroll-animate hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="100">
+            <div class="group card scroll-animate service-card hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="100">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Ecografía Abdominal y Pélvica</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
               <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Estudios especializados abdominales <br>(adulto y pediátrico), renales, hepáticos y prostáticos con medición precisa de volumen pre y post miccional.</p>
             </div>
             
             <!-- Servicio 3: Sistema Musculoesquelético -->
-            <div class="group card scroll-animate hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="200">
+            <div class="group card scroll-animate service-card hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="200">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Sistema Musculoesquelético</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
               <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Evaluación detallada de lesiones en hombro, brazo, codo, muñeca, mano, cadera, muslo, rodilla, pierna, tobillo y pie para un diagnóstico articular preciso.</p>
@@ -90,14 +90,14 @@
           <!-- Fila 2: 2 tarjetas centradas -->
           <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
             <!-- Servicio 4: Piel y Partes Blandas -->
-            <div class="group card scroll-animate hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="300">
+            <div class="group card scroll-animate service-card hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="300">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Piel y Partes Blandas</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
               <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Rastreo de biopolímeros, revisión de prótesis mamarias, lesiones de piel, región inguinal, cuello y glándulas mamarias o tiroides con tecnología avanzada.</p>
             </div>
             
             <!-- Servicio 5: Evaluación Vascular Periférica -->
-            <div class="group card scroll-animate hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="400">
+            <div class="group card scroll-animate service-card hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="400">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Evaluación Vascular Periférica</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
               <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Doppler renal, hepático y tiroideo. Mapeo venoso y arterial de miembros inferiores. Evaluación neurovascular del estrecho torácico superior.</p>
@@ -266,6 +266,7 @@ import AppointmentWizard from '../components/AppointmentWizard.vue';
 const heroContent = ref(null);
 const scrollArrow = ref(null);
 let observer = null;
+let serviceObserver = null;
 
 // Cuando se agenda una cita exitosamente
 const onCitaAgendada = () => {
@@ -300,6 +301,29 @@ onMounted(() => {
     rootMargin: '0px 0px -50px 0px'
   });
 
+  // Observer específico para activar servicios en móvil (cuando están en el centro de la pantalla)
+  const isMobile = () => window.innerWidth < 768;
+  
+  serviceObserver = new IntersectionObserver((entries) => {
+    if (isMobile()) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scroll-active');
+        } else {
+          entry.target.classList.remove('scroll-active');
+        }
+      });
+    }
+  }, {
+    threshold: 0.5,
+    rootMargin: '0px 0px 0px 0px'
+  });
+
+  // Observar las tarjetas de servicios especiales en móvil
+  document.querySelectorAll('.service-card').forEach((el) => {
+    serviceObserver.observe(el);
+  });
+
   // Observar todos los elementos con clase scroll-animate
   document.querySelectorAll('.scroll-animate').forEach((el) => {
     observer.observe(el);
@@ -309,6 +333,9 @@ onMounted(() => {
 onUnmounted(() => {
   if (observer) {
     observer.disconnect();
+  }
+  if (serviceObserver) {
+    serviceObserver.disconnect();
   }
 });
 </script>
@@ -343,5 +370,24 @@ onUnmounted(() => {
 .scroll-animate.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Efecto de scroll para móvil - activa cuando la tarjeta está en el centro de la pantalla */
+@media (max-width: 767px) {
+  .service-card.scroll-active {
+    background-color: rgb(52, 152, 219) !important; /* bg-accent-500 */
+  }
+  
+  .service-card.scroll-active h3 {
+    color: white !important;
+  }
+  
+  .service-card.scroll-active .bg-accent-500 {
+    background-color: white !important;
+  }
+  
+  .service-card.scroll-active p {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
 }
 </style>

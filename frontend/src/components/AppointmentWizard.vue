@@ -95,21 +95,19 @@
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Teléfono *</label>
               <div class="flex gap-1 md:gap-3">
-                <select 
+                <CustomSelect
                   v-model="formData.pais"
-                  class="w-18 md:w-28 px-1 md:px-3 py-3 md:py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 outline-none bg-white country-select text-xs md:text-sm"
-                  :style="{ minWidth: '72px', maxWidth: '96px' }"
-                >
-                  <option v-for="country in countries" :key="country.code" :value="country.code">
-                    {{ country.emoji }} +{{ country.phoneCode }}
-                  </option>
-                </select>
+                  :options="countryOptions"
+                  size="small"
+                  placeholder="Código"
+                  class="w-24 md:w-28"
+                />
                 <input 
                   v-model="formData.telefono"
                   type="tel" 
                   required
                   :placeholder="phonePlaceholder"
-                  class="flex-1 px-2 md:px-4 py-3 md:py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-200 outline-none transition-all text-sm md:text-base w-20"
+                  class="flex-1 px-2 md:px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-200 outline-none transition-all text-sm md:text-base w-16 md:w-auto"
                   @input="validatePhone"
                   inputmode="numeric"
                   pattern="[0-9]*"
@@ -121,60 +119,12 @@
             <!-- Motivo de Consulta -->
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Motivo de Consulta *</label>
-              <div class="relative">
-                <select 
-                  v-model="formData.motivo"
-                  required
-                  class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-200 outline-none transition-all bg-white appearance-none pr-10"
-                >
-                  <option value="" disabled>Selecciona el motivo de tu consulta</option>
-                  <option value="Consulta Médica General">Consulta Médica General</option>
-                  <option value="Consulta Médica Pediátrica">Consulta Médica Pediátrica</option>
-                  <option value="Consulta Psicosocial Familiar">Consulta Psicosocial Familiar</option>
-                  <option value="Eco Abdominal Adulto">Eco Abdominal Adulto</option>
-                  <option value="Eco Abdominal Infantil">Eco Abdominal Infantil</option>
-                  <option value="Eco Abdominal con énfasis Renal - Hepático - Pancreático">Eco Abdominal con énfasis Renal - Hepático - Pancreático</option>
-                  <option value="Eco Abdominal y Pélvico Combinado">Eco Abdominal y Pélvico Combinado</option>
-                  <option value="Eco Pélvico Ginecológico / Vesical">Eco Pélvico Ginecológico / Vesical</option>
-                  <option value="Eco Renovesicoprostático con volumen pre y post miccional">Eco Renovesicoprostático con volumen pre y post miccional</option>
-                  <option value="Eco Prostático Transabdominal">Eco Prostático Transabdominal</option>
-                  <option value="Eco Testicular con evaluación Doppler">Eco Testicular con evaluación Doppler</option>
-                  <option value="Eco Musculoesquelético de Hombro">Eco Musculoesquelético de Hombro</option>
-                  <option value="Eco Musculoesquelético de Brazo">Eco Musculoesquelético de Brazo</option>
-                  <option value="Eco Musculoesquelético de Codo">Eco Musculoesquelético de Codo</option>
-                  <option value="Eco Musculoesquelético de Antebrazo">Eco Musculoesquelético de Antebrazo</option>
-                  <option value="Eco Musculoesquelético de Muñeca">Eco Musculoesquelético de Muñeca</option>
-                  <option value="Eco Musculoesquelético de Mano">Eco Musculoesquelético de Mano</option>
-                  <option value="Eco Musculoesquelético de Cadera Adulto">Eco Musculoesquelético de Cadera Adulto</option>
-                  <option value="Eco de Cadera Infantil">Eco de Cadera Infantil</option>
-                  <option value="Eco Musculoesquelético de Muslo">Eco Musculoesquelético de Muslo</option>
-                  <option value="Eco Musculoesquelético de Rodilla">Eco Musculoesquelético de Rodilla</option>
-                  <option value="Eco Musculoesquelético de Pierna">Eco Musculoesquelético de Pierna</option>
-                  <option value="Eco Musculoesquelético de Tobillo">Eco Musculoesquelético de Tobillo</option>
-                  <option value="Eco Musculoesquelético de Pie">Eco Musculoesquelético de Pie</option>
-                  <option value="Eco de Partes Blandas (General)">Eco de Partes Blandas (General)</option>
-                  <option value="Eco de Partes Blandas de Pared Abdominal">Eco de Partes Blandas de Pared Abdominal</option>
-                  <option value="Eco de Partes Blandas de Región Inguinal">Eco de Partes Blandas de Región Inguinal</option>
-                  <option value="Eco de Partes Blandas de Cuello">Eco de Partes Blandas de Cuello</option>
-                  <option value="Eco de Partes Blandas para Rastreo de Biopolímeros">Eco de Partes Blandas para Rastreo de Biopolímeros</option>
-                  <option value="Eco de Partes Blandas para Revisión de Lesiones de Piel">Eco de Partes Blandas para Revisión de Lesiones de Piel</option>
-                  <option value="Eco Mamario Bilateral">Eco Mamario Bilateral</option>
-                  <option value="Eco Mamario con Revisión de Prótesis">Eco Mamario con Revisión de Prótesis</option>
-                  <option value="Eco Mamario en pacientes con Gigantomastia">Eco Mamario en pacientes con Gigantomastia</option>
-                  <option value="Eco Doppler Tiroideo">Eco Doppler Tiroideo</option>
-                  <option value="Eco Doppler Renal">Eco Doppler Renal</option>
-                  <option value="Eco Doppler Hepático">Eco Doppler Hepático</option>
-                  <option value="Eco Doppler Venoso de Miembros Inferiores">Eco Doppler Venoso de Miembros Inferiores</option>
-                  <option value="Eco Doppler Arterial de Miembros Inferiores">Eco Doppler Arterial de Miembros Inferiores</option>
-                  <option value="Eco Doppler Carotídeo Vertebrobasilar">Eco Doppler Carotídeo Vertebrobasilar</option>
-                  <option value="Evaluación Neurovascular del Estrecho Torácico Superior">Evaluación Neurovascular del Estrecho Torácico Superior</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </div>
+              <CustomSelect
+                v-model="formData.motivo"
+                :options="motivoOptions"
+                size="large"
+                placeholder="Selecciona el motivo de tu consulta"
+              />
             </div>
 
             <!-- Error de autenticación -->
@@ -450,6 +400,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
 import { useGoogleUserStore } from '../stores/useGoogleUser';
+import CustomSelect from './CustomSelect.vue';
 
 const emit = defineEmits(['cita-agendada']);
 
@@ -534,6 +485,57 @@ const countries = [
   { code: 'US', name: 'Estados Unidos', emoji: '🇺🇸', phoneCode: '1', phoneLength: 10 },
   { code: 'ES', name: 'España', emoji: '🇪🇸', phoneCode: '34', phoneLength: 9 },
   { code: 'EC', name: 'Ecuador', emoji: '🇪🇨', phoneCode: '593', phoneLength: 9 },
+];
+
+// Opciones formateadas para CustomSelect
+const countryOptions = computed(() => {
+  return countries.map(country => ({
+    value: country.code,
+    label: `${country.emoji} +${country.phoneCode}`
+  }));
+});
+
+const motivoOptions = [
+  { value: 'Consulta Médica General', label: 'Consulta Médica General' },
+  { value: 'Consulta Médica Pediátrica', label: 'Consulta Médica Pediátrica' },
+  { value: 'Consulta Psicosocial Familiar', label: 'Consulta Psicosocial Familiar' },
+  { value: 'Eco Abdominal Adulto', label: 'Eco Abdominal Adulto' },
+  { value: 'Eco Abdominal Infantil', label: 'Eco Abdominal Infantil' },
+  { value: 'Eco Abdominal con énfasis Renal - Hepático - Pancreático', label: 'Eco Abdominal con énfasis Renal - Hepático - Pancreático' },
+  { value: 'Eco Abdominal y Pélvico Combinado', label: 'Eco Abdominal y Pélvico Combinado' },
+  { value: 'Eco Pélvico Ginecológico / Vesical', label: 'Eco Pélvico Ginecológico / Vesical' },
+  { value: 'Eco Renovesicoprostático con volumen pre y post miccional', label: 'Eco Renovesicoprostático con volumen pre y post miccional' },
+  { value: 'Eco Prostático Transabdominal', label: 'Eco Prostático Transabdominal' },
+  { value: 'Eco Testicular con evaluación Doppler', label: 'Eco Testicular con evaluación Doppler' },
+  { value: 'Eco Musculoesquelético de Hombro', label: 'Eco Musculoesquelético de Hombro' },
+  { value: 'Eco Musculoesquelético de Brazo', label: 'Eco Musculoesquelético de Brazo' },
+  { value: 'Eco Musculoesquelético de Codo', label: 'Eco Musculoesquelético de Codo' },
+  { value: 'Eco Musculoesquelético de Antebrazo', label: 'Eco Musculoesquelético de Antebrazo' },
+  { value: 'Eco Musculoesquelético de Muñeca', label: 'Eco Musculoesquelético de Muñeca' },
+  { value: 'Eco Musculoesquelético de Mano', label: 'Eco Musculoesquelético de Mano' },
+  { value: 'Eco Musculoesquelético de Cadera Adulto', label: 'Eco Musculoesquelético de Cadera Adulto' },
+  { value: 'Eco de Cadera Infantil', label: 'Eco de Cadera Infantil' },
+  { value: 'Eco Musculoesquelético de Muslo', label: 'Eco Musculoesquelético de Muslo' },
+  { value: 'Eco Musculoesquelético de Rodilla', label: 'Eco Musculoesquelético de Rodilla' },
+  { value: 'Eco Musculoesquelético de Pierna', label: 'Eco Musculoesquelético de Pierna' },
+  { value: 'Eco Musculoesquelético de Tobillo', label: 'Eco Musculoesquelético de Tobillo' },
+  { value: 'Eco Musculoesquelético de Pie', label: 'Eco Musculoesquelético de Pie' },
+  { value: 'Eco de Partes Blandas (General)', label: 'Eco de Partes Blandas (General)' },
+  { value: 'Eco de Partes Blandas de Pared Abdominal', label: 'Eco de Partes Blandas de Pared Abdominal' },
+  { value: 'Eco de Partes Blandas de Región Inguinal', label: 'Eco de Partes Blandas de Región Inguinal' },
+  { value: 'Eco de Partes Blandas de Cuello', label: 'Eco de Partes Blandas de Cuello' },
+  { value: 'Eco de Partes Blandas para Rastreo de Biopolímeros', label: 'Eco de Partes Blandas para Rastreo de Biopolímeros' },
+  { value: 'Eco de Partes Blandas para Revisión de Lesiones de Piel', label: 'Eco de Partes Blandas para Revisión de Lesiones de Piel' },
+  { value: 'Eco Mamario Bilateral', label: 'Eco Mamario Bilateral' },
+  { value: 'Eco Mamario con Revisión de Prótesis', label: 'Eco Mamario con Revisión de Prótesis' },
+  { value: 'Eco Mamario en pacientes con Gigantomastia', label: 'Eco Mamario en pacientes con Gigantomastia' },
+  { value: 'Eco Doppler Tiroideo', label: 'Eco Doppler Tiroideo' },
+  { value: 'Eco Doppler Renal', label: 'Eco Doppler Renal' },
+  { value: 'Eco Doppler Hepático', label: 'Eco Doppler Hepático' },
+  { value: 'Eco Doppler Venoso de Miembros Inferiores', label: 'Eco Doppler Venoso de Miembros Inferiores' },
+  { value: 'Eco Doppler Arterial de Miembros Inferiores', label: 'Eco Doppler Arterial de Miembros Inferiores' },
+  { value: 'Eco Doppler Carotídeo Vertebrobasilar', label: 'Eco Doppler Carotídeo Vertebrobasilar' },
+  { value: 'Evaluación Neurovascular del Estrecho Torácico Superior', label: 'Evaluación Neurovascular del Estrecho Torácico Superior' },
 ];
 
 const weekDays = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];

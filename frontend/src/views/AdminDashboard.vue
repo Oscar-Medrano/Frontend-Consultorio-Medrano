@@ -76,25 +76,20 @@
             </div>
             
             <!-- Filter by status -->
-            <select
+            <CustomSelect
               v-model="filtroEstado"
-              class="border border-gray-300 rounded-lg px-2 md:px-4 py-1.5 md:py-2 text-xs md:text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 w-full md:w-auto"
-            >
-              <option value="">Estados</option>
-              <option value="pendiente">Pendiente</option>
-              <option value="confirmada">Confirmada</option>
-              <option value="cancelada">Cancelada</option>
-            </select>
+              :options="estadoOptions"
+              size="medium"
+              placeholder="Estados"
+            />
 
             <!-- Filter by period -->
-            <select
+            <CustomSelect
               v-model="filtroPeriodo"
-              class="border border-gray-300 rounded-lg px-2 md:px-4 py-1.5 md:py-2 text-xs md:text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 w-full md:w-auto"
-            >
-              <option value="">Todas</option>
-              <option value="semana">Semana</option>
-              <option value="mes">Mes</option>
-            </select>
+              :options="periodoOptions"
+              size="medium"
+              placeholder="Todas"
+            />
 
             <button 
               @click="cargarCitas" 
@@ -202,6 +197,7 @@
 import { ref, computed, onMounted, inject } from 'vue';
 import { useRouter } from 'vue-router';
 import { citasService, statsService } from '../services/api';
+import CustomSelect from '../components/CustomSelect.vue';
 
 const router = useRouter();
 const alert = inject('alert');
@@ -215,6 +211,18 @@ const toast = ref({
   message: '',
   type: 'success'
 });
+
+// Opciones para los filtros
+const estadoOptions = [
+  { value: 'pendiente', label: 'Pendiente' },
+  { value: 'confirmada', label: 'Confirmada' },
+  { value: 'cancelada', label: 'Cancelada' }
+];
+
+const periodoOptions = [
+  { value: 'semana', label: 'Semana' },
+  { value: 'mes', label: 'Mes' }
+];
 
 // Mensaje personalizado según el filtro de período
 const getMensajeVacio = computed(() => {
