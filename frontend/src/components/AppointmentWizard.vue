@@ -107,7 +107,7 @@
                   type="tel" 
                   required
                   :placeholder="phonePlaceholder"
-                  class="flex-1 px-2 md:px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-200 outline-none transition-all text-sm md:text-base w-20 md:w-auto"
+                  class="flex-1 px-2 md:px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-200 outline-none transition-all text-sm md:text-base w-20 md:w-auto h-14 md:h-12"
                   @input="validatePhone"
                   inputmode="numeric"
                   pattern="[0-9]*"
