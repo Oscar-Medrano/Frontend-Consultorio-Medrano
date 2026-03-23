@@ -100,14 +100,14 @@
                   :options="countryOptions"
                   size="small"
                   placeholder="Código"
-                  class="w-24 md:w-28"
+                  class="w-28 md:w-32"
                 />
                 <input 
                   v-model="formData.telefono"
                   type="tel" 
                   required
                   :placeholder="phonePlaceholder"
-                  class="flex-1 px-2 md:px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-200 outline-none transition-all text-sm md:text-base w-16 md:w-auto"
+                  class="flex-1 px-2 md:px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-200 outline-none transition-all text-sm md:text-base w-20 md:w-auto"
                   @input="validatePhone"
                   inputmode="numeric"
                   pattern="[0-9]*"

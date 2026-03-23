@@ -7,7 +7,7 @@
     <button
       type="button"
       @click="isOpen = !isOpen"
-      class="w-full cursor-pointer bg-white border-2 border-gray-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-200 outline-none transition-all rounded-xl pr-6 md:pr-8 flex items-center justify-between"
+      class="w-full cursor-pointer bg-white border-2 border-gray-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-200 outline-none transition-all rounded-xl pr-6 md:pr-8 flex items-center justify-between min-h-12 md:min-h-11"
       :class="paddingClasses"
     >
       <span :class="selectedOption ? 'text-gray-700' : 'text-gray-400'">
@@ -164,7 +164,7 @@ const sizeClasses = computed(() => {
 const paddingClasses = computed(() => {
   switch (props.size) {
     case 'small':
-      return 'px-1 md:px-3 py-3 text-xs md:text-sm'
+      return 'px-1 md:px-3 py-4 md:py-3 text-sm md:text-sm'
     case 'medium':
       return 'px-2 md:px-4 py-1.5 md:py-2 text-xs md:text-sm'
     case 'large':
