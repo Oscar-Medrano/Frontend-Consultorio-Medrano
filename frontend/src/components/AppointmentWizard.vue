@@ -733,7 +733,7 @@ async function loadOccupiedSlots(date) {
   
   try {
     const fechaStr = formatDateForAPI(date);
-    const response = await fetch(`/api/v1/citas/slots?fecha=${fechaStr}`);
+    const response = await fetch(`https://consultorio-medrano-api.onrender.com/api/v1/citas/slots?fecha=${fechaStr}`);
     
     if (response.ok) {
       const data = await response.json();
@@ -854,7 +854,7 @@ async function confirmAppointment() {
     
     console.log('Enviando cita al backend:', JSON.stringify(citaData, null, 2));
     
-    const response = await fetch('/api/v1/citas', {
+    const response = await fetch('https://consultorio-medrano-api.onrender.com/api/v1/citas', {
       method: 'POST',
       headers: headers,
       body: JSON.stringify(citaData)
