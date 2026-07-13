@@ -67,9 +67,9 @@
           <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
             <!-- Servicio 1: Consultas Médicas Integrales -->
             <div class="group card scroll-animate service-card hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="0">
-              <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Consultas Médicas Integrales</h3>
+              <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Consultas Médicas Especializadas</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
-              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Valoración completa de salud para adultos y niños, incluyendo consultas psicosociales familiares con un enfoque preventivo, humano y de bienestar integral.</p>
+              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Evaluación médica preventiva para toda la familia, psicoterapia familiar y tratamiento de enfermedades crónicas y águdas.</p>
             </div>
             
             <!-- Servicio 2: Ecografía Abdominal y Pélvica -->
@@ -83,7 +83,7 @@
             <div class="group card scroll-animate service-card hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="200">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Sistema Musculoesquelético</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
-              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Evaluación detallada de lesiones en hombro, brazo, codo, muñeca, mano, cadera, muslo, rodilla, pierna, tobillo y pie para un diagnóstico articular preciso.</p>
+              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Evaluación de alta resolución de lesiones en hombro, brazo, codo, muñeca, mano, cadera, muslo, rodilla, pierna, tobillo y pie para un diagnóstico articular preciso.</p>
             </div>
           </div>
           
@@ -93,14 +93,14 @@
             <div class="group card scroll-animate service-card hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="300">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Piel y Partes Blandas</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
-              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Rastreo de biopolímeros, revisión de prótesis mamarias, lesiones de piel, región inguinal, cuello y glándulas mamarias o tiroides con tecnología avanzada.</p>
+              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Rastreo de biopolímeros, revisión de prótesis mamarias, lesiones de piel, región inguinal, cuello, glándulas mamarias y tiroides con ecografía doppler espectral y elastografía qualitatíva.</p>
             </div>
             
             <!-- Servicio 5: Evaluación Vascular Periférica -->
             <div class="group card scroll-animate service-card hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="400">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Evaluación Vascular Periférica</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
-              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Doppler renal, hepático y tiroideo. Mapeo venoso y arterial de miembros inferiores. Evaluación neurovascular del estrecho torácico superior.</p>
+              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Estudio de arterias renales para despistaje de hipertensión renovascular. Mapeo arterial y venoso de mienbros superiores e inferiores. Evaluación neurovascular del estrecho torácico superior. Ecografia doppler carotídea y sistema vertebrobasilar</p>
             </div>
           </div>
         </div>

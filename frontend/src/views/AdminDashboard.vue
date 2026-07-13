@@ -417,7 +417,7 @@ const confirmarPorWhatsApp = async (cita) => {
   );
   if (!confirmed) return;
   
-  const mensaje = `Saludos ${cita.paciente_nombre}. Le informamos que su cita médica para el ${formatDateForMessage(cita.fecha)} a las ${cita.horario} ha sido confirmada. El motivo de su consulta es: ${cita.motivo}. Lo esperamos en Consultorio Médico Medrano. Será un placer atenderle.`;
+  const mensaje = `Saludos ${cita.paciente_nombre}. Le informamos que su cita médica para el ${formatDateForMessage(cita.fecha)} a las ${cita.horario} ha sido confirmada. El motivo de su consulta es: ${cita.motivo}. Lo esperamos en el Centro Médico Profesional, piso 2, consultorio 6, frente al ascensor. Será un placer atenderle.`;
   
   // Abrir WhatsApp
   openWhatsApp(cita.paciente_telefono, mensaje);
@@ -478,3 +478,4 @@ onMounted(() => {
   cargarCitas();
 });
 </script>
+
