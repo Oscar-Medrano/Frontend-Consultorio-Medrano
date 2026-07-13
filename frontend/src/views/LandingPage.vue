@@ -69,7 +69,7 @@
             <div class="group card scroll-animate service-card hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="0">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Consultas Médicas Especializadas</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
-              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Evaluación médica preventiva para toda la familia, psicoterapia familiar y tratamiento de enfermedades crónicas y águdas.</p>
+              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Evaluación médica preventiva para toda la familia y tratamiento de enfermedades crónicas y águdas.</p>
             </div>
             
             <!-- Servicio 2: Ecografía Abdominal y Pélvica -->
@@ -93,7 +93,7 @@
             <div class="group card scroll-animate service-card hover:bg-accent-500 transition-all duration-300 flex flex-col h-full p-5 md:p-8" data-delay="300">
               <h3 class="text-lg font-semibold mb-3 text-primary-800 group-hover:text-white text-center">Piel y Partes Blandas</h3>
               <div class="w-12 h-0.5 bg-accent-500 mx-auto mb-3 group-hover:bg-white"></div>
-              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Rastreo de biopolímeros, revisión de prótesis mamarias, lesiones de piel, región inguinal, cuello, glándulas mamarias y tiroides con ecografía doppler espectral y elastografía qualitatíva.</p>
+              <p class="text-sm text-gray-600 group-hover:text-white/90 text-center mt-auto">Rastreo de biopolímeros, revisión de prótesis mamarias, lesiones de piel, región inguinal, cuello, glándulas mamarias y tiroides con ecografía doppler espectral y elastografía cualitativa.</p>
             </div>
             
             <!-- Servicio 5: Evaluación Vascular Periférica -->
